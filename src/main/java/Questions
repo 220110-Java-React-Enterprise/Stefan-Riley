@@ -1,1 +1,4 @@
-How to update my balance variable and save with polymorphism while it is out of scope
+- How to update my balance variable and save with polymorphism while it is out of scope
+    > Try extending the class to udpate it
+
+- the .equals() sign doesnt work
