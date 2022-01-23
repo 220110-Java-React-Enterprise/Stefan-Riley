@@ -1,13 +1,17 @@
 import java.util.Scanner;
 
-public class MenuStartup {
+public class BankAppMenu extends View {
 
-    // CREATE USER / LOGIN MENU CONDITION
+    public BankAppMenu() {
+        viewName = "BankAppMenu";
+        viewManager = ViewManager.getViewManager();
+    }
 
-    public void MenuShow() {
+    //IT'S TIME  MADE THIS AFUCKGIN POGOG!!!!!
+//is it nesisary to do the do while loop anymore
+    public void renderView() {
 
-
-        int mainMenuSelection;
+        int appBankInput;
         do {
             System.out.println("Welcome to Bank of DodgeCoin");
             //THIS IS WHERE TO ENTER IF TO CREATE AN ACCOUNT OR OR LOGIN WITH
@@ -20,32 +24,32 @@ public class MenuStartup {
             System.out.println("Please choose an option");
             System.out.println("----------------------------------");
 
-            Scanner sc = new Scanner(System.in);
-            mainMenuSelection = sc.nextInt();
+            appBankInput = viewManager.getScanner().nextInt();
+            ;
 
             //how to connect the user input to the switch condition
 
-            if (mainMenuSelection == 1) {
+            if (appBankInput == 1) {
                 System.out.println("You have selected the deposite option:");
                 System.out.println("Your current balance is : " + bankAccountClasses.balance);
                 System.out.println("How much do you want to deposit : ");
-                bankAccountClasses.amount = sc.nextInt();
+                bankAccountClasses.amount = viewManager.getScanner().nextInt();
                 //I'm trying to make this input equal balance
                 //am I better making balance a scope value but then how will that work with class
                 System.out.println("**********************************");
                 bankAccountClasses.deposit(bankAccountClasses.balance, bankAccountClasses.amount);
                 System.out.println("**********************************");
                 System.out.println("----------------------------------");
-            } else if (mainMenuSelection == 2) {
+            } else if (appBankInput == 2) {
                 System.out.println("You have selected the deposite option:");
                 System.out.println("Your current balance is : " + bankAccountClasses.balance);
                 System.out.println("How much do you want to withdaw : ");
-                bankAccountClasses.amount = sc.nextInt();
+                bankAccountClasses.amount = viewManager.getScanner().nextInt();
                 System.out.println("**********************************");
                 bankAccountClasses.withdraw(bankAccountClasses.balance, bankAccountClasses.amount);
                 System.out.println("**********************************");
                 System.out.println("----------------------------------");
-            } else if (mainMenuSelection == 3) {
+            } else if (appBankInput == 3) {
                 System.out.println("You have selected to view your Current balance:");
                 System.out.println("**********************************");
                 System.out.println("Your current balance is : " + bankAccountClasses.balance);
@@ -56,9 +60,28 @@ public class MenuStartup {
                 System.out.println("Thanks for banking with Dodgecoin.");
                 break;
             }
-        } while (mainMenuSelection != 4);
+        } while (appBankInput != 4);
 
+        //STORE THE RESPONSE INTO THE A DATA STORE
+
+        //GET THE CODE WORKIGN THEN ADD THE DATA STORE
+//        viewManager.navigator("BankAppMenu");
     }
 
 
+//    public void renderView() {
+//        System.out.println("************* Thanks choosing the login in options ************* ");
+//        System.out.println("Accessing your account now...");
+//        System.out.println("________________________________________________________");
+//        String firstName = viewManager.getScanner().nextLine();
+//        System.out.println("Enter your first name : " + firstName);
+//        String lastName = viewManager.getScanner().nextLine();
+//        System.out.println("Enter your last name : " + lastName);
+//        int intialMenuInput = viewManager.getScanner().nextInt();
+//        System.out.println("Please enter number here: " + intialMenuInput);
+//        System.out.println("________________________________________________________");
+
+
+
 }
+

@@ -1,4 +1,8 @@
-- How to update my balance variable and save with polymorphism while it is out of scope
-    > Try extending the class to udpate it
+
+
+- I'm trying to run the starting menu first but its being weild in having a runtime error
+> is needs teh object to have all the information in the arugment of the object, but I don't have
+> that information collect just yet to complete the object requirment
+
 
 - the .equals() sign doesnt work
